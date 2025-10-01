@@ -138,8 +138,43 @@ http://localhost:8081/JettyServletApp/datetime
 
 
 
+# c. WildflyEJBApp
 
+Nume: WildflyEJBApp
+Clasa: ButtonServlet.java + index.jsp
+Port: 8082
 
-    
+Aceasta aplicație este un microserviciu Java EE care rulează pe serverul WildFly și expune diverse endpoint-uri prin EJB-uri <br/> și Servlets. În exemplul nostru, aplicația a fost testată printr-un simplu EJB expus,<br/> iar răspunsul include date preluate din TomcatServletApp.
 
+Proiectul a fost creat în IntelliJ IDEA folosind un Maven Archetype pentru maven-archetype-webapp.
+
+Dependințele relevante în pom.xml:
+
+```
+    <dependency>
+    <groupId>jakarta.platform</groupId>
+    <artifactId>jakarta.jakartaee-api</artifactId>
+    <version>9.1.0</version>
+    <scope>provided</scope>
+    </dependency>
+
+```
+
+` <scope>provided</scope> ` este folosit pentru că WildFly conține deja API-urile Jakarta EE.
+
+### Configurare WildFly
+
+Am folosit WildFly 19.1.0.Final.
+
+Aplicația este împachetată ca WAR: WildFlyEJBApp-1.1-SNAPSHOT.war.
+
+WAR-ul trebuie copiat în directorul standalone/deployments al WildFly.
+
+În standalone.xml, asigurați-vă că nu mai există <deployment> vechi pentru versiuni anterioare. (2 ore am stat...)
+
+Pentru a porni serverul de wildfly:
+```
+cd %WILDFLY_HOME%\bin
+standalone.bat -Djboss.http.port=8082
+```
         
