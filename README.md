@@ -11,6 +11,7 @@ Acest repository contine 3 aplicatii Servlet pe 3 medii diferite: Tomcat, Jetty,
 - WildFly 19.1.0.Final (pentru compatibilitatea cu Java EE 8)
 - Maven 3.x
 
+- set JAVA_HOME, WILDFLY_HOME variables
 
 # a. TomcatServletApp
 
