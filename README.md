@@ -94,14 +94,7 @@ Pentru setup-ul acestei aplicatii a fost nevoie sa creez un proiect in Intellij 
 
 Am folosit <scope>provided</scope> pentru a nu include aceasta dependinta in WAR-ul final (Tomcat contine deja servlet-api).
 
-<br/>Pentru setup-ul acestei aplicații a fost nevoie să creez un Jetty base denumit jetty_tpjad_base și să plasez WAR-ul <br/> aplicației în directorul webapps al acestui base. Tot in interiorul acestui base am creat un fisier <br/> denumit start.ini care contine modulele deploy, http, si server, necesare pentru initializarea connector-ului care <br/> asculta pe portul 8081 si directioneaza request-urile spre servlet. Acest server rulează pe portul 8080, <br/> dar portul poate fi modificat prin adăugarea proprietății <port>.
-    
-Serverul Jetty a fost pornit folosind linia de comandă:
-
-```
-cd jetty_tpjad_base
-java -Djetty.port=8081 -jar ../start.jar
-```
+<br/>Pentru setup-ul acestei aplicații a fost nevoie să creez un Jetty base denumit jetty_tpjad_base și să plasez WAR-ul <br/> aplicației în directorul webapps al acestui base. Tot in interiorul acestui base am creat un fisier <br/> denumit start.ini care contine modulele deploy, http, si server, necesare pentru initializarea connector-ului care <br/> asculta pe portul 8081 si directioneaza request-urile spre servlet. Acest server rulează pe portul 8080, <br/> dar portul poate fi modificat prin adăugarea proprietății -Djetty.port <port>.
 
 Aplicația conține clasa DateTimeServlet.java în pachetul com.sa.tpjad.jetty, care implementează metoda doGet astfel:
 
@@ -132,7 +125,14 @@ Endpoint-ul /datetime este mapat în web.xml astfel încât Jetty să știe ce s
 ```
 In aceasta aplicatie nu am folosit adnotari, deci a fost necesara maparea in web.xml
 
-Astfel, atunci când aplicația este accesată prin URL-ul:
+Serverul Jetty a fost pornit folosind linia de comandă:
+
+```
+cd jetty_tpjad_base
+java -Djetty.port=8081 -jar ../start.jar
+```
+
+Astfel, atunci când aplicația pornita poate fi accesată prin URL-ul:
 
 http://localhost:8081/JettyServletApp/datetime
 
