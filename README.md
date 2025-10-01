@@ -98,9 +98,8 @@ Am folosit <scope>provided</scope> pentru a nu include aceasta dependinta in WAR
     
 Serverul Jetty a fost pornit folosind linia de comandă:
 
-```cd jetty_tpjad_base```
-
-```java -Djetty.port=8081 -jar ../start.jar```
+```cd jetty_tpjad_base
+java -Djetty.port=8081 -jar ../start.jar```
 
 Aplicația conține clasa DateTimeServlet.java în pachetul com.sa.tpjad.jetty, care implementează metoda doGet astfel:
 
