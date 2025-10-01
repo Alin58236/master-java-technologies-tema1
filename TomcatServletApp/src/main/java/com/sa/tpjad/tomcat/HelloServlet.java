@@ -36,7 +36,7 @@ public class HelloServlet extends HttpServlet {
 
             System.out.println("Received from JettyServletApp: "+datetime);
         }catch (Exception e){
-            System.err.println("ERROR: "+e.getMessage());
+            System.err.println("ERROR connecting to JettyServletApp: "+e.getMessage());
             System.out.println("Using default datetime.");
         }
 
