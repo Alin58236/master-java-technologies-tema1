@@ -2,6 +2,14 @@
 
 Acest repository contine 3 aplicatii Servlet pe 3 medii diferite: Tomcat, Jetty, Wildfly
 
+# Prerequisites
+
+- IDE
+- Java 8 (Corretto 1.8.0_462 in exemplu)
+- Apache Tomcat (v9.0.109)
+- Jetty-Distribution-9.4.58.v20250814
+- WildFly 19.1.0.Final (pentru compatibilitatea cu Java EE 8)
+- Maven 3.x
 
 
 # a. TomcatServletApp
