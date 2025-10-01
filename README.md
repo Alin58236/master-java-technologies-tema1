@@ -64,11 +64,11 @@ Acest repository contile 3 aplicatii Servlet pe 3 medii diferite: Tomcat, Jetty,
             }
         }
      ```
-    Aceasta clasa expune endpoint-ul /hello prin intermediul adnotarii @WebServlet("/hello"). Cand este apelata, face un apel API la urmatorul serviciu pentru a extrage data si ora curenta si returneaza un sir de caractere care sa contina acest raspuns.
+    Aceasta clasa expune endpoint-ul /hello prin intermediul adnotarii @WebServlet("/hello"). Cand este apelata, <br/> face un apel API la urmatorul serviciu pentru a extrage data si ora curenta si returneaza un sir <br/> de caractere care sa contina acest raspuns.
 
-    Datorita faptului ca am folosit adnotarea pentru expunerea endpoint-ului, singurul lucru pe care l-am scris in web.xml a fost doar legatura dintre numele servlet-ului (HelloServlet) si clasa care contine logica din spatele API call-ului (com.sa.tpjad.tomcat.HelloServlet).
+    Datorita faptului ca am folosit adnotarea pentru expunerea endpoint-ului, singurul lucru pe care l-am scris in <br/> web.xml a fost doar legatura dintre numele servlet-ului (HelloServlet) si clasa care contine <br/> logica din spatele API call-ului (com.sa.tpjad.tomcat.HelloServlet).
 
-    Pentru pornirea acestei aplicatii pe Tomcat trebuie compilat proiectul de maven utilizand comanda mvn clean install. In urma acesteia rezulta fisierul TomcatServletApp.war care trebuie copiat in fisierul webapps din directorul in care se afla tomcat. Dupa copiere, daca rulam start.bat din tomcat/bin serverul va rula si vom putea apela endpoint-ul http://localhost:8080/TomcatServletApp/hello
+    Pentru pornirea acestei aplicatii pe Tomcat trebuie compilat proiectul de maven utilizand comanda mvn clean install. <br/> In urma acesteia rezulta fisierul TomcatServletApp.war care trebuie copiat in fisierul webapps <br/> din directorul in care se afla tomcat. Dupa copiere, daca rulam start.bat din tomcat/bin serverul va rula si <br/> vom putea apela endpoint-ul http://localhost:8080/TomcatServletApp/hello
 
 
 
@@ -78,9 +78,9 @@ Acest repository contile 3 aplicatii Servlet pe 3 medii diferite: Tomcat, Jetty,
     Clasa: DateTimeServlet.java
     Port: 8081
 
-    Cea de-a doua aplicație creată a fost un microserviciu Java care expune un singur endpoint /datetime. Aceasta aplicație rulează pe serverul Jetty și returnează data și ora curentă sub formă de text simplu (text/plain).
+    Cea de-a doua aplicație creată a fost un microserviciu Java care expune un singur endpoint /datetime. Aceasta <br/> aplicație rulează pe serverul Jetty și returnează data și ora curentă sub formă de text simplu (text/plain).
 
-     Pentru setup-ul acestei aplicatii a fost nevoie sa creez un proiect in Intellij IDEA de tipul Maven Acrhetype de tipul maven-archetype-webapp. Pentru dependinte am completat in fisierul pom.xml :
+     Pentru setup-ul acestei aplicatii a fost nevoie sa creez un proiect in Intellij IDEA de tipul Maven Acrhetype <br/> de tipul maven-archetype-webapp. Pentru dependinte am completat in fisierul pom.xml :
 
     `<dependency>
         <groupId>jakarta.servlet</groupId>
@@ -89,8 +89,8 @@ Acest repository contile 3 aplicatii Servlet pe 3 medii diferite: Tomcat, Jetty,
         <scope>provided</scope>
     </dependency>`
 
-    Am folosit <scope>provided</scope> pentru a nu include aceasta dependinta in WAR-ul final (Tomcat contine deja servlet-api).
-    Pentru setup-ul acestei aplicații a fost nevoie să creez un Jetty base denumit jetty_tpjad_base și să plasez WAR-ul aplicației în directorul webapps al acestui base. Tot in interiorul acestui base am creat un fisier denumit start.ini care contine modulele deploy, http, si server, necesare pentru initializarea connector-ului care asculta pe portul 8081 si directioneaza request-urile spre servlet. Acest server rulează pe portul 8080, dar portul poate fi modificat prin adăugarea proprietății <port>.
+    Am folosit <scope>provided</scope> pentru a nu include aceasta dependinta in WAR-ul final (Tomcat contine deja servlet-api).<br/>
+    Pentru setup-ul acestei aplicații a fost nevoie să creez un Jetty base denumit jetty_tpjad_base și să plasez WAR-ul <br/> aplicației în directorul webapps al acestui base. Tot in interiorul acestui base am creat un fisier <br/> denumit start.ini care contine modulele deploy, http, si server, necesare pentru initializarea connector-ului care <br/> asculta pe portul 8081 si directioneaza request-urile spre servlet. Acest server rulează pe portul 8080, <br/> dar portul poate fi modificat prin adăugarea proprietății <port>.
     
     Serverul Jetty a fost pornit folosind linia de comandă:
 
