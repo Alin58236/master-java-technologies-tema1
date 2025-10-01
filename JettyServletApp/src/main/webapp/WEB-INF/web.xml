@@ -1,12 +1,13 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
 <web-app>
 
   <servlet>
     <servlet-name>DateTimeServlet</servlet-name>
     <servlet-class>com.sa.tpjad.jetty.DateTimeServlet</servlet-class>
   </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DateTimeServlet</servlet-name>
+    <url-pattern>/datetime</url-pattern>
+  </servlet-mapping>
 
 </web-app>

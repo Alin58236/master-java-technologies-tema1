@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
-@WebServlet("/datetime")
 public class DateTimeServlet extends HttpServlet {
 
     @Override
