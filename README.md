@@ -7,7 +7,9 @@ Acest repository contile 3 aplicatii Servlet pe 3 medii diferite: Tomcat, Jetty,
 # a. TomcatServletApp
 
 Nume: TomcatServletApp
+
 Clasa: HelloServlet.java
+
 Port:8080
 
 Prima aplicatie creata a fost o aplicatie Java care expune un singur endpoint "/hello". Aceasta aplicatie a fost testata pe serverul Tomcat pe portul 8080, iar ca raspuns aceasta returneaza textul "Salut! Este ora <data si ora curenta preluate din urmatorul microserviciu>". In cazul in care cel de-al doilea microserviciu nu este activ pe portul 8081 aplicatia va returna utilizatorului un text default, in cazul de fata "Habar n-am".
@@ -77,7 +79,9 @@ In urma acesteia rezulta fisierul TomcatServletApp.war care trebuie copiat in fi
 # b. JettyServletApp
 
 Nume: JettyServletApp
+
 Clasa: DateTimeServlet.java
+
 Port: 8081
 
 Cea de-a doua aplicație creată a fost un microserviciu Java care expune un singur endpoint /datetime. Aceasta <br/> aplicație rulează pe serverul Jetty și returnează data și ora curentă sub formă de text simplu (text/plain).
@@ -141,7 +145,9 @@ http://localhost:8081/JettyServletApp/datetime
 # c. WildflyEJBApp
 
 Nume: WildflyEJBApp
+
 Clasa: ButtonServlet.java + index.jsp
+
 Port: 8082
 
 Aceasta aplicație este un microserviciu Java EE care rulează pe serverul WildFly și expune diverse endpoint-uri prin EJB-uri <br/> și Servlets. În exemplul nostru, aplicația a fost testată printr-un simplu EJB expus,<br/> iar răspunsul include date preluate din TomcatServletApp.
@@ -174,7 +180,7 @@ WAR-ul trebuie copiat în directorul standalone/deployments al WildFly.
 
 Pentru a porni serverul de wildfly:
 ```
-cd %WILDFLY_HOME%\bin
-standalone.bat -Djboss.http.port=8082
+    cd %WILDFLY_HOME%\bin
+    standalone.bat -Djboss.http.port=8082
 ```
         
