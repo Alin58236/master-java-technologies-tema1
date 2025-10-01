@@ -13,10 +13,5 @@
     <servlet-class>com.sa.tpjad.tomcat.HelloServlet</servlet-class>
   </servlet>
 
-  <servlet-mapping>
-    <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
-
 
 </web-app>
